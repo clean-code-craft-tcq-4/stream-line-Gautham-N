@@ -12,8 +12,7 @@ using namespace std;
 extern const int STANDARD_NUMBER_OF_SAMPLES = 50;
 extern std::stringstream ActualSenderOutput[STANDARD_NUMBER_OF_SAMPLES], ExpectedSenderOutput[STANDARD_NUMBER_OF_SAMPLES];
 
-int main()
-{
+
     TEST_CASE("PASSING TEST CASE 1") {
 
     int Temperature_Sensor_Readings [STANDARD_NUMBER_OF_SAMPLES] = { 0 };
@@ -23,5 +22,5 @@ int main()
     CallSender(Temperature_Sensor_Readings, State_Of_Charge);
     REQUIRE(TestSenderOutput(Temperature_Sensor_Readings, State_Of_Charge) == true);
 }
-}
+
 
