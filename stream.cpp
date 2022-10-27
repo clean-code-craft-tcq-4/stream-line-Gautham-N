@@ -12,10 +12,14 @@ extern std::stringstream ActualSenderOutput[STANDARD_NUMBER_OF_SAMPLES], Expecte
 
 int main()
 {
-    int Temperature_Sensor_Readings[STANDARD_NUMBER_OF_SAMPLES] = { 0 };
-    int State_Of_Charge[STANDARD_NUMBER_OF_SAMPLES] = { 0 };
+    TEST_CASE("PASSING TEST CASE 1") {
+
+    int Temperature_Sensor_Readings [STANDARD_NUMBER_OF_SAMPLES] = { 0 };
+    int State_Of_Charge [STANDARD_NUMBER_OF_SAMPLES] = { 0 };
     GenerateRandomTemperNumbers(Temperature_Sensor_Readings, STANDARD_NUMBER_OF_SAMPLES);
     GenerateRandomSOCNumbers(State_Of_Charge, STANDARD_NUMBER_OF_SAMPLES);
     CallSender(Temperature_Sensor_Readings, State_Of_Charge);
+    REQUIRE(TestSenderOutput(Temperature_Sensor_Readings, State_Of_Charge) == true);
+}
 }
 
